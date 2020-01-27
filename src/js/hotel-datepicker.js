@@ -60,7 +60,10 @@ export default class HotelDatepicker {
 		this.onDayClick = opts.onDayClick === undefined ? false : opts.onDayClick;
 		this.onOpenDatepicker = opts.onOpenDatepicker === undefined ? false : opts.onOpenDatepicker;
 		this.onSelectRange = opts.onSelectRange === undefined ? false : opts.onSelectRange;
-
+        
+        //Check alignment
+        this.alignment = opts.alignment || 'left';
+        
         // DOM input
 		this.input = input;
 
@@ -319,7 +322,7 @@ export default class HotelDatepicker {
 
 	createDatepickerDomString() {
         // Generate our datepicker
-		let html = '<div id="' + this.getDatepickerId() + '" style="display:none" class="datepicker datepicker--closed">';
+		let html = '<div id="' + this.getDatepickerId() + '" style="display:none" class="datepicker datepicker--closed ' + (this.alignment === 'right' ? " datepicker__right" : null) + '">';
 
 		html += '<div class="datepicker__inner">';
 
