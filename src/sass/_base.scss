@@ -22,6 +22,12 @@
 	}
 }
 
+datepicker__right {
+    @include mq_m {
+        right: 2rem;
+    }
+}
+
 .datepicker__inner {
 	overflow: hidden;
 }
